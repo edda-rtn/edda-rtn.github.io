@@ -416,8 +416,7 @@ python run_demo.py --config config/default.yaml</code></pre>
 
       <h3 id="faq-impl">Implementation Details</h3>
       <p>
-        Detail hyperparameters, training schedules, and any implementation decisions
-        that are not covered in the paper due to space constraints.
+        Edda is implemented as a custom network simulator. We built it as a custom network simulator over using a standard simulator because -- (i) a custom simulator allows us more control over studying the effects of our analytical scheduling and routing model, (ii) our framework is specialized for Real-Time Networks (RTNs), and simulators, with their event scheduling infrastructure and general-purpose design have significant overhead.    
       </p>
     </section>
   </main>
