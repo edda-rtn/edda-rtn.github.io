@@ -251,7 +251,7 @@
 
     <div class="sidebar-section">
       <div class="sidebar-label">Links</div>
-      <a href="https://github.com/edda-rtn/edda/" target="_blank">Code Repository ↗</a>
+      <a href="https://anonymous.4open.science/r/edda-F8E6/src/" target="_blank">Code Repository ↗</a>
     </div>
 
   </nav>
@@ -283,7 +283,7 @@
 
       <p>
         This website serves as a supplement to the paper. Please visit
-        <a href="https://github.com/edda-rtn/edda/" target="_blank">our GitHub repository</a>
+        <a href="https://anonymous.4open.science/r/edda-F8E6/src/" target="_blank">our GitHub repository</a>
         for source code, datasets, and pre-trained models.
       </p>
 
@@ -404,19 +404,15 @@
 
     <section id="faq">
       <h2>FAQ</h2>
-      <h3 id="faq-setup">Setup Details</h3>
+      <h3 id="faq-setup">Implementation Details</h3>
       <p>
-        Explain how to set up the environment, install dependencies, and run the code.
-        Common questions about hardware requirements, OS compatibility, etc. belong here.
+        Edda is available at:
       </p>
-      <pre><code>git clone https://github.com/yourname/yourrepo
-cd yourrepo
-pip install -r requirements.txt
-python run_demo.py --config config/default.yaml</code></pre>
+      <pre><code>https://anonymous.4open.science/r/edda-F8E6/src/</code></pre>
 
       <h3 id="faq-impl">Implementation Details</h3>
       <p>
-        Edda is implemented as a custom network simulator. We built it as a custom network simulator over using a standard simulator because -- (i) a custom simulator allows us more control over studying the effects of our analytical scheduling and routing model, (ii) our framework is specialized for Real-Time Networks (RTNs), and simulators, with their event scheduling infrastructure and general-purpose design have significant overhead.    
+        Edda is implemented as a custom network simulator. We built it as a custom network simulator over using a standard simulator because -- (i) a custom simulator allows us more control over studying the effects of our analytical scheduling and routing model, (ii) our framework is specialized for Real-Time Networks (RTNs), and simulators, with their event scheduling infrastructure and general-purpose design have significant overhead that is not appropriate for our fine-grained measurements.    
       </p>
     </section>
   </main>
