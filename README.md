@@ -1,1 +1,1 @@
-# gh-bot
+# Project Edda Resource Page
