@@ -245,7 +245,7 @@
 
     <div class="sidebar-section">
       <div class="sidebar-label">Links</div>
-      <a href="https://anonymous.4open.science/r/edda-F8E6/src/" target="_blank">Code Repository ↗</a>
+      <a href="https://anonymous.4open.science/r/edda-F8E6/" target="_blank">Code Repository ↗</a>
     </div>
 
   </nav>
@@ -258,8 +258,9 @@
 
       <p>
         <span class="badge badge-blue">In Submission</span>
-        <span class="badge badge-gray">Open Source</span>
-        <!-- <span class="badge badge-green">Preprint Available</span> -->
+        <a href="https://anonymous.4open.science/r/edda-F8E6/" target="_blank">
+          <span class="badge badge-gray">Open Source (Click Here)</span>
+        </a>
       </p>
 
       <div class="abstract-box">
@@ -368,22 +369,26 @@
 
     <section id="case_studies_eval">
       <h2>Realistic Case Studies</h2>
-      <p>Results from Avionics: </p>
+      <p>Avionics network prototype (Airbus A-380): </p>
+      <div class="note"><strong>Key result:</strong> SOTA (RealFlow) misses the deadline for three flight control flows with a deadline of 900 us, whereas Edda is able to meet the real-time requirements of all flows.</div>
       <div style="display:flex; gap:16px; margin-bottom:1.25rem; justify-content:center;">
         <img src="figures/case_studies/avionics.png" alt="Figure 3" style="width:100%; height:auto; border-radius:6px;"/>
       </div>
 
-      <p>Results from Substation: </p>
+      <p>Substation network at a resort: </p>
+      <div class="note"><strong>Key result:</strong> SOTA (RealFlow) misses the deadline for a flow corresponding to RMS of Sampled Values (SV) in the primary relay, whereas Edda is able to meet the real-time requirements of all flows. The same effect is observed in the backup relay.</div>
       <div style="display:flex; gap:16px; margin-bottom:1.25rem; justify-content:center;">
         <img src="figures/case_studies/substation.png" alt="Figure 3" style="width:100%; height:auto; border-radius:6px;"/>
       </div>
 
-      <p>Results from Automotive: </p>
+      <p>Automotive network prototype (Renault): </p>
+      <div class="note"><strong>Key result:</strong> SOTA (RealFlow) misses the deadline for two command and control flows with a deadline of 600 us. Additionally, video flows with a deadline of 34 ms (for 30 fps) miss their deadlines too. All flows, however meet their deadlines when using Edda.</div>
       <div style="display:flex; gap:16px; margin-bottom:1.25rem; justify-content:center;">
         <img src="figures/case_studies/automotive.png" alt="Figure 3" style="width:100%; height:auto; border-radius:6px;"/>
       </div>
 
-      <p>Results from Medical: </p>
+      <p>Medical device network (Operating Room): </p>
+      <div class="note"><strong>Key result:</strong> SOTA (RealFlow) misses the deadline for flows from endoscope to patient monitor with a deadline of 0.5 ms. Additionally, flows from pump to HF device with a deadline of 2 ms also miss their deadline. All flows, however meet their deadlines when using Edda.</div>      
       <div style="display:flex; gap:16px; margin-bottom:1.25rem; justify-content:center;">
         <img src="figures/case_studies/medical.png" alt="Figure 3" style="width:100%; height:auto; border-radius:6px;"/>
       </div>
@@ -397,11 +402,15 @@
       <p>
         Edda is available at:
       </p>
-      <pre><code>https://anonymous.4open.science/r/edda-F8E6/src/</code></pre>
+      <pre><code>https://anonymous.4open.science/r/edda-F8E6/</code></pre>
 
       <h3 id="faq-impl">Implementation Details</h3>
       <p>
-        Edda is implemented as a custom network simulator. We built it as a custom network simulator over using a standard simulator because -- (i) a custom simulator allows us more control over studying the effects of our analytical scheduling and routing model, (ii) our framework is specialized for Real-Time Networks (RTNs), and simulators, with their event scheduling infrastructure and general-purpose design have significant overhead that is not appropriate for our fine-grained measurements.    
+        Edda is implemented as a custom network simulator. We chose to build a custom simulator over using a standard one (e.g., OMNeT++, ns-3) for the following reasons:
+        <ul>
+          <li>A custom simulator allows us more control over studying the effects of our analytical scheduling and routing model.</li>
+          <li>Our framework is specialized for Real-Time Networks (RTNs), and standard simulators — with their event scheduling infrastructure and general-purpose design — have significant overhead that is not appropriate for our fine-grained measurements.</li>
+        </ul>    
       </p>
     </section>
   </main>
