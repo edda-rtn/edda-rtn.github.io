@@ -255,7 +255,7 @@
 
       <p>
         <span class="badge badge-blue">In Submission</span>
-        <a href="https://anonymous.4open.science/r/edda-F8E6/" target="_blank">
+        <a href="https://anonymous.4open.science/r/edda-F8E6/" target="_blank" style="text-decoration: none; border-bottom: none;">
           <span class="badge badge-gray">Open Source (Click Here)</span>
         </a>
       </p>
@@ -366,25 +366,25 @@
 
     <section id="case_studies_eval">
       <h2>Realistic Case Studies</h2>
-      <p>Avionics network prototype (Airbus A-380): </p>
+      <p><h3>Avionics network prototype (Airbus A-380)</h3> Consider a simplified avionics topology of an A-380 as noted in Annighoefer <em>et al.</em> <a href="#citation-annighoefer">[3]</a>, Kashinath <em>et al.</em> <a href="#citation-kashinath">[4]</a> that comprises of both real-time traffic (e.g.,flight control, engine control and cockpit control flows) and non-real-time traffic such as cabin flows.</p>
       <div class="note"><strong>Key result:</strong> SOTA (RealFlow) misses the deadline for three flight control flows with a deadline of 900 us, whereas Edda is able to meet the real-time requirements of all flows.</div>
       <div style="display:flex; gap:16px; margin-bottom:1.25rem; justify-content:center;">
         <img src="figures/case_studies/avionics.png" alt="Figure 3" style="width:100%; height:auto; border-radius:6px;"/>
       </div>
 
-      <p>Substation network at a resort: </p>
+      <p><h3>Substation network at a resort</h3> Consider the substation network of a resort. We look at the network in a bay. Within a bay, the network consists of two relays to control two motors -- a primary motor and a backup motor and is equipped with a Real-time Automation Controller (RTAC) for managing the substation network. There is also a DCS Master/Slave (to manage data on other parts of the network), a Front End Processor (FEP) and NTP servers to time synchronize various parts of the bay.</p>
       <div class="note"><strong>Key result:</strong> SOTA (RealFlow) misses the deadline for a flow corresponding to RMS of Sampled Values (SV) in the primary relay, whereas Edda is able to meet the real-time requirements of all flows. The same effect is observed in the backup relay.</div>
       <div style="display:flex; gap:16px; margin-bottom:1.25rem; justify-content:center;">
         <img src="figures/case_studies/substation.png" alt="Figure 3" style="width:100%; height:auto; border-radius:6px;"/>
       </div>
 
-      <p>Automotive network prototype (Renault): </p>
+      <p><h3>Automotive network prototype (Renault)</h3>Consider the topology of a prototype renault automotive network from Navet <em>et al.</em> <a href="#citation-navet">[2]</a>. The network is a 4-switch topology, comprising 27 real-time and 14 non-real time flows. </p>
       <div class="note"><strong>Key result:</strong> SOTA (RealFlow) misses the deadline for two command and control flows with a deadline of 600 us. Additionally, video flows with a deadline of 34 ms (for 30 fps) miss their deadlines too. All flows, however meet their deadlines when using Edda.</div>
       <div style="display:flex; gap:16px; margin-bottom:1.25rem; justify-content:center;">
         <img src="figures/case_studies/automotive.png" alt="Figure 3" style="width:100%; height:auto; border-radius:6px;"/>
       </div>
 
-      <p>Medical device network (Operating Room): </p>
+      <p><h3>Medical device network (Operating Room)</h3> Rother <em>et al.</em> <a href="#citation-rother">[1]</a> gives an example medical device network comprising the following devices: patient monitor, endoscope, foot switch, HF device and a pump in a ring topology. The patient monitor provides the patient's vital data (e.g., blood pressure and Sp$O_2$) and sends these to the endoscope. The endoscope consumes these and fades them into the final image as an overlay, for the surgeon. The foot pedal sends message to the HF device by sending procedure trigger messages. The medical pump queries the status of both HF device that of the patient from the patient monitor.</p>
       <div class="note"><strong>Key result:</strong> SOTA (RealFlow) misses the deadline for flows from endoscope to patient monitor with a deadline of 0.5 ms. Additionally, flows from pump to HF device with a deadline of 2 ms also miss their deadline. All flows, however meet their deadlines when using Edda.</div>      
       <div style="display:flex; gap:16px; margin-bottom:1.25rem; justify-content:center;">
         <img src="figures/case_studies/medical.png" alt="Figure 3" style="width:100%; height:auto; border-radius:6px;"/>
@@ -409,6 +409,18 @@
           <li>Our framework is specialized for Real-Time Networks (RTNs), and standard simulators — with their event scheduling infrastructure and general-purpose design — have significant overhead that is not appropriate for our fine-grained measurements.</li>
         </ul>    
       </p>
+    </section>
+    <section id="citation">
+      <h2>References</h2>
+      <div class="citation-block">
+        <div id="citation-rother">[1] B. Rother, M. Kasparick, E. Schweisguth, F. Golatowski, and D. Timmermann, "Automatic Configuration of a TSN Network for SDC-based Medical Device Networks," in 2020 16th IEEE International Conference on Factory Communication Systems (WFCS), Porto, Portugal: IEEE, Apr. 2020, pp. 1–8. doi: 10.1109/WFCS47810.2020.9114471.</div>
+        <br/>
+        <div id="citation-navet">[2] N. Navet, J. Villanueva, J. Migge, and M. Boyer, "Insights on the Performance and Configuration of AVB and TSN in Automotive Applications," 2017 IEEE Standards Association (IEEE-SA) Ethernet & IP @ Automotive Technology Day, San Jose, CA, USA, Nov. 2017.</div>
+        <br/>
+        <div id="citation-annighoefer">[3] B. Annighoefer, C. Reif, and F. Thieleck, "Network topology optimization for distributed integrated modular avionics," in 2014 IEEE/AIAA 33rd Digital Avionics Systems Conference (DASC), Oct. 2014, pp. 4A1-1-4A1-12. doi: 10.1109/DASC.2014.6979461.</div>
+        <br/>
+        <div id="citation-kashinath">[4] A. Kashinath, M. Hasan, R. Kumar, S. Mohan, R. B. Bobba and S. Padhy, "Safety Critical Networks using Commodity SDNs," IEEE INFOCOM 2021 - IEEE Conference on Computer Communications, Vancouver, BC, Canada, 2021, pp. 1-10, doi: 10.1109/INFOCOM42981.2021.9488708.</div>
+      </div>
     </section>
   </main>
 </div>
